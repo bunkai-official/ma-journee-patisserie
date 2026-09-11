@@ -1,0 +1,19 @@
+.DS_Store
+
+# Local sharing / preview artifacts
+ma-journee-site/
+ma-journee-site-share.zip
+tools/
+
+# Unrelated draft/mock files in this workspace
+dansul_*.html
+dansuru-*
+assets/dansuru-practice.png
+assets/site/
+assets/*.png
+assets/products-catalog/
+assets/raw-cakes/
+
+# Logs and temporary files
+*.log
+*.tmp
