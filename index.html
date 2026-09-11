@@ -8,9 +8,9 @@
     <meta property="og:title" content="ma journée pâtisserie">
     <meta property="og:description" content="日常にそっと寄り添う、生ケーキと焼き菓子のパティスリー。">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/client/crops/editorial-hero-baked.png">
+    <meta property="og:image" content="assets/client/crops/cake-showcase-hero.jpg">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=schedule-1">
+    <link rel="stylesheet" href="styles.css?v=mobile-products-1">
     <script src="assets/vendor/lenis.min.js" defer></script>
     <script src="script.js?v=media-update-1" defer></script>
   </head>
@@ -32,14 +32,60 @@
     <main id="main">
       <section class="hero home-visual">
         <div class="hero-bg">
-          <img src="assets/client/crops/editorial-hero-baked.png" alt="自然光の中に並ぶma journéeの焼き菓子" loading="eager" fetchpriority="high">
+          <img src="assets/client/crops/cake-showcase-hero.jpg" alt="ショーケースに並ぶma journéeの生ケーキ" loading="eager" fetchpriority="high">
         </div>
         <div class="hero-content">
-          <p class="section-label">ma journée pâtisserie</p>
-          <h1>あなたの一日に、<br>特別な一口を</h1>
-          <p class="hero-lead">2026年6月5日、谷町九丁目駅近くにオープンしました。</p>
+          <h1><span>あなたの一日に、</span><span>特別な一口を</span></h1>
+          <p class="hero-lead">生ケーキと焼き菓子を、毎日ていねいに。谷町九丁目駅近くの小さなパティスリーです。</p>
+          <div class="hero-product-tags" aria-label="取り扱い商品">
+            <span>生ケーキ</span>
+            <span>焼き菓子</span>
+            <span>ギフト</span>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#products">商品を見る</a>
+            <a class="button button-outline" href="shop-info.html">店舗情報</a>
+          </div>
         </div>
         <div class="scroll-cue" aria-hidden="true"><span>Scroll</span></div>
+      </section>
+
+      <section class="top-section home-product-highlight" id="products">
+        <div class="top-heading centered js-fade-up">
+          <p class="section-label">Products</p>
+          <h2>今日食べたいお菓子を。</h2>
+          <p>ショーケースの生ケーキ、手土産に選びやすい焼き菓子、季節の果実を使った限定のお菓子。まずは、店頭で出会えるものをご覧ください。</p>
+        </div>
+        <div class="home-product-grid">
+          <article class="home-product-card js-fade-up">
+            <img src="assets/client/crops/cake-shortcake.jpg" alt="ショートケーキ" loading="lazy">
+            <div><p class="section-label">Gâteaux</p><h3>ショートケーキ</h3><p>軽やかなクリームと季節の果実。まず選びたくなる定番です。</p><span>¥620</span></div>
+          </article>
+          <article class="home-product-card js-fade-up">
+            <img src="assets/client/crops/cake-fruit-tart.jpg" alt="フルーツタルト" loading="lazy">
+            <div><p class="section-label">Tarte</p><h3>フルーツタルト</h3><p>香ばしいタルトに、みずみずしい果実を重ねました。</p><span>¥680</span></div>
+          </article>
+          <article class="home-product-card js-fade-up">
+            <img src="assets/client/crops/cake-mont-blanc.jpg" alt="モンブラン" loading="lazy">
+            <div><p class="section-label">Mont Blanc</p><h3>モンブラン</h3><p>香り豊かなクリームを重ねた、午後のお茶に合う一品です。</p><span>¥650</span></div>
+          </article>
+          <article class="home-product-card js-fade-up">
+            <img src="assets/client/crops/madeleine-card.jpg" alt="マドレーヌ" loading="lazy">
+            <div><p class="section-label">Baked</p><h3>マドレーヌ</h3><p>発酵バターの香りと、しっとり焼き上げた生地。</p><span>¥240</span></div>
+          </article>
+          <article class="home-product-card js-fade-up">
+            <img src="assets/client/crops/sable-card.jpg" alt="バターサブレ" loading="lazy">
+            <div><p class="section-label">Sablé</p><h3>バターサブレ</h3><p>さくっとほどける食感。小さな贈り物にも。</p><span>¥320</span></div>
+          </article>
+          <article class="home-product-card js-fade-up">
+            <img src="assets/client/crops/assort-card.jpg" alt="焼き菓子アソート" loading="lazy">
+            <div><p class="section-label">Gift</p><h3>焼き菓子アソート</h3><p>人気のお菓子を少しずつ。手土産に選びやすい詰め合わせです。</p><span>¥1,650</span></div>
+          </article>
+        </div>
+        <div class="home-product-links js-fade-up">
+          <a class="wide-link" href="products.html">すべての商品をみる</a>
+          <a class="wide-link" href="season.html">季節限定をみる</a>
+        </div>
       </section>
 
       <section class="top-concept visual-section js-fade-up">
@@ -86,7 +132,7 @@
       <section class="top-section products-showcase">
         <div class="top-heading centered js-fade-up">
           <p class="section-label">Products</p>
-          <h2>商品一覧</h2>
+          <h2>カテゴリから探す</h2>
         </div>
         <div class="product-category-list">
           <a class="product-category js-fade-up" href="raw-cakes.html">
