@@ -955,6 +955,44 @@ h3 {
   line-height: 1.8;
 }
 
+.monthly-schedule-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(20px, 4vw, 44px);
+  width: min(100%, var(--max));
+  margin: 0 auto clamp(30px, 5vw, 54px);
+  border: 1px solid rgba(185, 120, 125, 0.22);
+  border-radius: 18px;
+  padding: clamp(22px, 4vw, 38px);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(247, 241, 234, 0.86)),
+    radial-gradient(circle at 96% 12%, rgba(185, 120, 125, 0.12), transparent 30%);
+  box-shadow: 0 20px 46px rgba(96, 68, 58, 0.08);
+}
+
+.monthly-schedule-card h2,
+.monthly-schedule-card h3 {
+  margin: 2px 0 12px;
+  font-size: clamp(22px, 2.6vw, 32px);
+}
+
+.monthly-schedule-card p:not(.section-label) {
+  max-width: 42em;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+}
+
+.monthly-schedule-card .button {
+  white-space: nowrap;
+}
+
+.monthly-schedule-section {
+  padding-top: 0;
+}
+
 .visit-guide {
   padding-top: 0;
 }
@@ -3494,6 +3532,11 @@ body.is-menu-open .nav-toggle {
   .product-category {
     min-height: 390px;
   }
+
+  .monthly-schedule-card .button {
+    width: 100%;
+    white-space: normal;
+  }
 }
 
 /* Shared header navigation refinement. */
@@ -3600,8 +3643,13 @@ body.is-menu-open .site-header {
   }
 
   .visit-summary,
-  .visit-guide-grid {
+  .visit-guide-grid,
+  .monthly-schedule-card {
     grid-template-columns: 1fr;
+  }
+
+  .monthly-schedule-card .button {
+    width: fit-content;
   }
 }
 
