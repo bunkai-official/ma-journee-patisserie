@@ -4964,3 +4964,189 @@ h3,
     padding-inline: 18px;
   }
 }
+
+/* Clear action design: make navigation CTAs unmistakably clickable. */
+.wide-link,
+.arrow-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 54px;
+  border: 1px solid rgba(185, 120, 125, 0.34);
+  border-radius: 2px;
+  padding: 14px 52px 14px 22px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 12px 28px rgba(74, 51, 40, 0.05);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 220ms ease, background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.wide-link::before,
+.arrow-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 21px;
+  width: 22px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+  transform: translateY(-50%);
+  transition: width 220ms ease, opacity 220ms ease;
+}
+
+.wide-link::after,
+.arrow-link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 21px;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 220ms ease;
+}
+
+.wide-link:hover,
+.wide-link:focus-visible,
+.arrow-link:hover,
+.arrow-link:focus-visible {
+  border-color: rgba(185, 120, 125, 0.68);
+  color: #fff;
+  background: var(--rose);
+  box-shadow: 0 16px 36px rgba(185, 120, 125, 0.17);
+  transform: translateY(-2px);
+}
+
+.wide-link:hover::before,
+.wide-link:focus-visible::before,
+.arrow-link:hover::before,
+.arrow-link:focus-visible::before {
+  width: 28px;
+  opacity: 0.72;
+}
+
+.wide-link:hover::after,
+.wide-link:focus-visible::after,
+.arrow-link:hover::after,
+.arrow-link:focus-visible::after {
+  transform: translate(4px, -50%) rotate(45deg);
+}
+
+.home-product-links {
+  align-items: stretch;
+}
+
+.home-product-links .wide-link,
+.products-showcase > .wide-link {
+  width: 100%;
+  max-width: none;
+  margin-top: 0;
+}
+
+.home-product-links .wide-link:first-child,
+.products-showcase > .wide-link {
+  border-color: transparent;
+  color: #fff;
+  background: linear-gradient(135deg, var(--rose), var(--rose-dark));
+  box-shadow: 0 16px 34px rgba(185, 120, 125, 0.18);
+}
+
+.home-product-links .wide-link:first-child:hover,
+.home-product-links .wide-link:first-child:focus-visible,
+.products-showcase > .wide-link:hover,
+.products-showcase > .wide-link:focus-visible {
+  background: var(--rose-dark);
+}
+
+.feature-row .arrow-link,
+.section-heading .arrow-link,
+.info-card .arrow-link,
+.instagram-schedule-frame .arrow-link {
+  margin-top: 20px;
+}
+
+.section-heading .arrow-link {
+  min-width: 190px;
+}
+
+.product-category small {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  min-height: 38px;
+  border: 1px solid rgba(185, 120, 125, 0.35);
+  border-radius: 2px;
+  padding: 8px 36px 8px 14px;
+  color: var(--rose-dark);
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.product-category small::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+  transform: translateY(-50%);
+}
+
+.product-category small::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.product-category:hover small,
+.product-category:focus-visible small {
+  color: #fff;
+  background: var(--rose);
+  border-color: var(--rose);
+}
+
+@media (max-width: 760px) {
+  .wide-link,
+  .arrow-link {
+    width: 100%;
+    min-height: 58px;
+    padding: 15px 52px 15px 18px;
+    font-size: 14px;
+  }
+
+  .section-heading {
+    align-items: stretch;
+  }
+
+  .section-heading .arrow-link {
+    min-width: 0;
+    margin-top: 14px;
+  }
+
+  .product-category small {
+    min-height: 40px;
+    padding-block: 9px;
+  }
+}
