@@ -56,6 +56,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const heroSlides = [...document.querySelectorAll("[data-hero-slide]")];
+  const heroDots = [...document.querySelectorAll("[data-hero-dot]")];
+
+  if (heroSlides.length > 1) {
+    let activeSlide = 0;
+    let slideTimer;
+
+    const showSlide = (index) => {
+      activeSlide = index;
+      heroSlides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === activeSlide;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+      });
+      heroDots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === activeSlide;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-pressed", String(isActive));
+      });
+    };
+
+    const startSlider = () => {
+      if (reduceMotion) return;
+      window.clearInterval(slideTimer);
+      slideTimer = window.setInterval(() => {
+        showSlide((activeSlide + 1) % heroSlides.length);
+      }, 5200);
+    };
+
+    heroDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        showSlide(Number(dot.dataset.heroDot));
+        startSlider();
+      });
+    });
+
+    showSlide(0);
+    startSlider();
+  }
+
   const filters = document.querySelectorAll("[data-news-filter]");
   const newsItems = document.querySelectorAll("[data-news-category]");
 

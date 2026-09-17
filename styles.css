@@ -5150,3 +5150,531 @@ h3,
     padding-block: 9px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Home refresh 2026-09-17
+   Rollback point: git tag before-sourire-redesign-20260917
+   Bright patisserie styling inspired by the reference layout, using only
+   ma journee content and assets.
+   -------------------------------------------------------------------------- */
+.home-page {
+  background: #fff;
+}
+
+.home-page .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+  min-height: 88px;
+  padding: 12px clamp(28px, 5vw, 76px);
+  border-bottom: 1px solid rgba(185, 120, 125, 0.16);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: none;
+  backdrop-filter: blur(14px);
+}
+
+.home-page .site-header.scrolled {
+  min-height: 74px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 8px 28px rgba(74, 51, 40, 0.07);
+}
+
+.home-page .site-header .brand {
+  justify-self: start;
+}
+
+.home-page .site-header .brand-logo {
+  width: clamp(155px, 15vw, 205px);
+}
+
+.home-page .header-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: clamp(20px, 2.5vw, 38px);
+}
+
+.home-page .header-nav a {
+  position: relative;
+  padding: 10px 0;
+  color: #5c453b;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.home-page .header-nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  left: 0;
+  height: 1px;
+  background: var(--rose);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 260ms ease;
+}
+
+.home-page .header-nav a:hover::after,
+.home-page .header-nav a:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.home-page .header-instagram {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--rose-dark);
+}
+
+.home-page .header-instagram .instagram-icon {
+  width: 23px;
+  height: 23px;
+}
+
+.home-page .mobile-quick-nav {
+  display: none;
+}
+
+.home-page .home-visual {
+  position: relative;
+  display: grid;
+  place-items: center start;
+  min-height: min(790px, calc(100svh - 88px));
+  box-sizing: border-box;
+  padding: clamp(72px, 10vh, 116px) clamp(28px, 7vw, 108px);
+  overflow: hidden;
+  color: var(--ink);
+  background: #fff;
+  isolation: isolate;
+}
+
+.home-page .home-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) 31%, rgba(255, 255, 255, 0.58) 51%, rgba(255, 255, 255, 0.08) 72%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(247, 241, 234, 0.18));
+  pointer-events: none;
+}
+
+.hero-slides,
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  margin: 0;
+}
+
+.hero-slide {
+  opacity: 0;
+  transition: opacity 1200ms ease;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 52%;
+  filter: saturate(0.96) brightness(1.06);
+  transform: scale(1.02);
+  transition: transform 6.4s ease-out;
+}
+
+.hero-slide.is-active img {
+  transform: scale(1.065);
+}
+
+.home-page .home-visual .hero-content {
+  position: relative;
+  z-index: 2;
+  justify-items: start;
+  width: min(100%, 680px);
+  max-width: 680px;
+  height: auto;
+  margin: 0;
+  padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 52px);
+  text-align: left;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 24px 70px rgba(74, 51, 40, 0.08);
+  backdrop-filter: blur(4px);
+  align-self: center;
+  justify-self: start;
+}
+
+.home-page .home-visual .hero-content::before {
+  width: 52px;
+  margin: 0 0 22px;
+  background: var(--rose);
+}
+
+.home-page .hero-name {
+  margin: 0 0 16px;
+  color: var(--rose-dark);
+  font-family: var(--font-latin);
+  font-size: 15px;
+  letter-spacing: 0.16em;
+}
+
+.home-page .home-visual .hero-content h1 {
+  color: #49362d;
+  font-size: clamp(34px, 3.3vw, 46px);
+  line-height: 1.48;
+  letter-spacing: 0.03em;
+  text-shadow: none;
+}
+
+.home-page .home-visual .hero-content h1 span {
+  display: block;
+}
+
+.home-page .home-visual .hero-lead {
+  max-width: 35em;
+  margin-top: 22px;
+  color: #5e4c43;
+  font-size: clamp(14px, 1.15vw, 16px);
+  line-height: 2;
+  text-shadow: none;
+}
+
+.home-page .home-visual .hero-actions.hero-guide-links {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  margin-top: 32px;
+  border-top: 1px solid rgba(185, 120, 125, 0.35);
+  border-bottom: 1px solid rgba(185, 120, 125, 0.35);
+}
+
+.home-page .home-visual .hero-guide-links a,
+.home-page .home-visual .hero-guide-links .hero-guide-primary {
+  display: grid;
+  flex: 1;
+  align-content: center;
+  min-height: 82px;
+  border: 0;
+  border-radius: 0;
+  padding: 15px 42px 15px 18px;
+  color: var(--ink);
+  background: transparent;
+  box-shadow: none;
+}
+
+.home-page .home-visual .hero-guide-links a + a {
+  border-left: 1px solid rgba(185, 120, 125, 0.35);
+}
+
+.home-page .home-visual .hero-guide-links a:hover,
+.home-page .home-visual .hero-guide-links a:focus-visible,
+.home-page .home-visual .hero-guide-links .hero-guide-primary:hover,
+.home-page .home-visual .hero-guide-links .hero-guide-primary:focus-visible {
+  color: #fff;
+  background: var(--rose);
+  box-shadow: none;
+  transform: none;
+}
+
+.home-page .home-visual .hero-guide-links span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.home-page .home-visual .hero-guide-links small {
+  font-size: 11px;
+}
+
+.hero-slide-dots {
+  position: absolute;
+  right: clamp(30px, 4vw, 64px);
+  bottom: clamp(32px, 5vh, 52px);
+  z-index: 4;
+  display: flex;
+  gap: 12px;
+}
+
+.hero-slide-dots button {
+  width: 34px;
+  height: 3px;
+  border: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.62);
+  cursor: pointer;
+  transition: width 240ms ease, background-color 240ms ease;
+}
+
+.hero-slide-dots button.is-active {
+  width: 58px;
+  background: var(--rose-dark);
+}
+
+.home-page .home-visual .scroll-cue {
+  right: auto;
+  bottom: 25px;
+  left: 50%;
+  color: #5e493f;
+  transform: translateX(-50%);
+}
+
+.home-page .top-section,
+.home-page .feature-section,
+.home-page .news-section,
+.home-page .shop-section,
+.home-page .owner-recruit-section {
+  padding-block: clamp(72px, 9vw, 124px);
+}
+
+.home-page .home-product-highlight {
+  background: #fff;
+}
+
+.home-page .top-concept {
+  min-height: 660px;
+}
+
+.home-page .feature-section,
+.home-page .shop-section {
+  background: #fff8ed;
+}
+
+.home-page .products-showcase,
+.home-page .news-section,
+.home-page .owner-recruit-section {
+  background: #fff;
+}
+
+.home-page .message-section {
+  margin: 0;
+}
+
+.home-page .section-label {
+  color: #b26f75;
+  letter-spacing: 0.18em;
+}
+
+.home-page .home-product-card,
+.home-page .product-category,
+.home-page .link-card {
+  border-color: rgba(185, 120, 125, 0.14);
+  box-shadow: 0 16px 42px rgba(74, 51, 40, 0.07);
+}
+
+.home-page .home-product-card:nth-child(even) {
+  transform: translateY(28px);
+}
+
+.home-page .home-product-card.js-fade-up:nth-child(even).is-visible {
+  transform: translateY(28px);
+}
+
+.home-page .feature-row {
+  margin-top: clamp(56px, 8vw, 112px);
+}
+
+.home-page .js-fade-up {
+  transform: translateY(28px);
+  transition-duration: 900ms;
+}
+
+.home-page .js-fade-up.is-visible {
+  transform: translateY(0);
+}
+
+@media (max-width: 1040px) {
+  .home-page .site-header {
+    gap: 20px;
+    padding-inline: 28px;
+  }
+
+  .home-page .header-nav {
+    gap: 20px;
+  }
+
+  .home-page .header-nav a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-page .site-header,
+  .home-page .site-header.scrolled {
+    position: sticky;
+    grid-template-columns: 1fr auto;
+    gap: 8px 18px;
+    min-height: 0;
+    padding: 13px 18px 0;
+  }
+
+  .home-page .site-header .brand-logo {
+    width: min(48vw, 178px);
+  }
+
+  .home-page .header-nav {
+    display: none;
+  }
+
+  .home-page .header-instagram {
+    justify-self: end;
+  }
+
+  .home-page .mobile-quick-nav {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-inline: -18px;
+    border-top: 1px solid rgba(185, 120, 125, 0.12);
+  }
+
+  .home-page .mobile-quick-nav a {
+    padding: 11px 3px 10px;
+    color: #654f45;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  .home-page .mobile-quick-nav a + a {
+    border-left: 1px solid rgba(185, 120, 125, 0.12);
+  }
+
+  .home-page .home-visual {
+    display: grid;
+    grid-template-rows: minmax(370px, 56svh) auto;
+    place-items: stretch;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .home-page .home-visual::before {
+    inset: 0 0 auto;
+    height: max(370px, min(500px, 56svh));
+    background: linear-gradient(180deg, rgba(255,255,255,0.02) 40%, rgba(255,255,255,0.78) 100%);
+  }
+
+  .hero-slides {
+    bottom: auto;
+    height: max(370px, min(500px, 56svh));
+  }
+
+  .hero-slide img {
+    object-position: 55% center;
+  }
+
+  .home-page .home-visual .hero-content {
+    grid-row: 2;
+    width: 100%;
+    max-width: none;
+    padding: 32px 22px 38px;
+    background: #fff;
+    box-shadow: none;
+    backdrop-filter: none;
+    align-self: stretch;
+  }
+
+  .home-page .home-visual .hero-content::before {
+    width: 44px;
+    margin-bottom: 17px;
+  }
+
+  .home-page .hero-name {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .home-page .home-visual .hero-content h1 {
+    font-size: clamp(23px, 6.4vw, 29px);
+    line-height: 1.55;
+    letter-spacing: 0.015em;
+  }
+
+  .home-page .home-visual .hero-lead {
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .home-page .home-visual .hero-actions.hero-guide-links {
+    margin-top: 24px;
+  }
+
+  .home-page .home-visual .hero-guide-links a,
+  .home-page .home-visual .hero-guide-links .hero-guide-primary {
+    min-height: 76px;
+    padding: 12px 32px 12px 13px;
+  }
+
+  .home-page .home-visual .hero-guide-links span {
+    font-size: 14px;
+  }
+
+  .home-page .home-visual .hero-guide-links small {
+    display: none;
+  }
+
+  .hero-slide-dots {
+    top: calc(max(370px, min(500px, 56svh)) - 25px);
+    right: 20px;
+    bottom: auto;
+  }
+
+  .hero-slide-dots button {
+    width: 26px;
+  }
+
+  .hero-slide-dots button.is-active {
+    width: 44px;
+  }
+
+  .home-page .home-visual .scroll-cue {
+    display: none;
+  }
+
+  .home-page .top-section,
+  .home-page .feature-section,
+  .home-page .news-section,
+  .home-page .shop-section,
+  .home-page .owner-recruit-section {
+    padding-block: 68px;
+  }
+
+  .home-page .home-product-card:nth-child(even),
+  .home-page .home-product-card.js-fade-up:nth-child(even).is-visible {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    display: none;
+    transition: none;
+  }
+
+  .hero-slide:first-child {
+    display: block;
+    opacity: 1;
+  }
+
+  .hero-slide img,
+  .hero-slide.is-active img {
+    transform: none;
+    transition: none;
+  }
+
+  .hero-slide-dots {
+    display: none;
+  }
+}
