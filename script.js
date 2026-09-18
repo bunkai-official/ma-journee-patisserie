@@ -112,6 +112,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const reservationDate = document.querySelector("[data-reservation-date]");
+  if (reservationDate) {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const localTomorrow = new Date(tomorrow.getTime() - tomorrow.getTimezoneOffset() * 60000)
+      .toISOString()
+      .split("T")[0];
+    reservationDate.min = localTomorrow;
+  }
+
   const targets = document.querySelectorAll(".fade-in, .js-fade-up");
   if (!("IntersectionObserver" in window)) {
     targets.forEach((target) => target.classList.add("is-visible"));
