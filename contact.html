@@ -28,7 +28,10 @@
         <img src="assets/client/crops/shop-exterior.jpg" srcset="assets/client/crops/shop-exterior.jpg 1000w" sizes="(max-width: 900px) 100vw, 50vw" alt="ma journée pâtisserieの店舗外観" loading="lazy">
       </section>
       <section class="contact-layout fade-in">
-        <form class="contact-card contact-form" action="#" method="post">
+        <form class="contact-card contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="contact-thanks.html">
+          <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="subject" data-remove-prefix value="ma journée お問い合わせ">
+          <p class="form-hidden"><label>この欄には入力しないでください <input name="bot-field"></label></p>
           <h2>Contact Form</h2>
           <div class="form-field"><label for="name">お名前</label><input id="name" name="name" autocomplete="name" required></div>
           <div class="form-field"><label for="kana">フリガナ</label><input id="kana" name="kana" required></div>
