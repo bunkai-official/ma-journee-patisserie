@@ -7403,3 +7403,21 @@ html:has(.home-page) {
     grid-template-columns: minmax(0, 1fr) auto;
   }
 }
+
+/* Subpage tone: match the refreshed home page without changing page layouts. */
+body:not(.home-page) {
+  color: #49362d;
+  background: #fff;
+}
+
+body:not(.home-page) .page-hero h1,
+body:not(.home-page) .section-heading h2,
+body:not(.home-page) .top-heading h2 {
+  color: #49362d;
+  font-size: clamp(27px, 3.1vw, 31px);
+}
+
+body:not(.home-page) h2,
+body:not(.home-page) h3 {
+  color: #49362d;
+}
