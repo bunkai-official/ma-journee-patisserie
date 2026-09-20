@@ -7333,3 +7333,33 @@ html:has(.home-page) {
     transform: none;
   }
 }
+
+/* Shared footer: extend the home-page treatment to every public page. */
+.site-footer {
+  width: 100%;
+  max-width: none;
+  padding: 72px clamp(24px, 6vw, 96px) 42px;
+  color: #fff;
+  background: #82605a;
+  border-top: 0;
+}
+
+.site-footer .brand-logo {
+  opacity: 1;
+  filter: brightness(0) invert(1);
+  mix-blend-mode: normal;
+}
+
+.site-footer nav a,
+.site-footer p,
+.site-footer .footer-phone,
+.site-footer .footer-instagram {
+  color: #fff;
+}
+
+.site-footer nav a:hover,
+.site-footer nav a:focus-visible,
+.site-footer .footer-phone:hover,
+.site-footer .footer-phone:focus-visible {
+  color: #fff8dd;
+}
