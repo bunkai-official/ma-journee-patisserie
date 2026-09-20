@@ -1176,6 +1176,26 @@ h3 {
   justify-content: center;
 }
 
+.site-footer .footer-sns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-phone {
+  color: var(--rose-dark);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.footer-phone:hover,
+.footer-phone:focus-visible {
+  color: var(--rose);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .site-footer p {
   margin: 0;
   color: var(--muted);
@@ -4063,6 +4083,10 @@ body.is-menu-open .nav-toggle {
   background: rgba(255, 255, 255, 0.12);
 }
 
+.home-page .site-footer .footer-phone {
+  color: #fff;
+}
+
 .home-page .site-footer p {
   grid-column: 1 / -1;
   margin: 12px 0 0;
@@ -6904,6 +6928,7 @@ h3,
 }
 
 .compact-footer {
+  grid-template-columns: repeat(2, auto);
   justify-content: center;
 }
 
