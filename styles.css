@@ -7344,9 +7344,10 @@ html:has(.home-page) {
   border-top: 0;
 }
 
-.site-footer .brand-logo {
+.site-footer .brand-logo,
+.home-page .site-footer .brand-logo {
   opacity: 1;
-  filter: brightness(0) invert(1);
+  filter: none;
   mix-blend-mode: normal;
 }
 
