@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /reservation-thanks
 Disallow: /contact-thanks
+Disallow: /news-detail
 
 Sitemap: https://ma-journee-patisserie.netlify.app/sitemap.xml

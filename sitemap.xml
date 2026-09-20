@@ -61,11 +61,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ma-journee-patisserie.netlify.app/news-detail</loc>
-    <lastmod>2026-09-19</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://ma-journee-patisserie.netlify.app/news-flying-bake</loc>
     <lastmod>2026-09-19</lastmod>
     <priority>0.5</priority>
