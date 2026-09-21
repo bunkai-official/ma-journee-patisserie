@@ -1,0 +1,257 @@
+/* Stable top-page composition. Loaded after the legacy stylesheet. */
+html:has(.home-page),
+.home-page,
+.home-page main { width: 100%; max-width: 100%; overflow-x: clip; }
+
+.home-page main > .hero,
+.home-page main > .business-strip,
+.home-page main > .reservation-ribbon,
+.home-page main > section,
+.home-page .hero-slides,
+.home-page .hero-content,
+.home-page .hero-slide-dots,
+.home-page .top-concept,
+.home-page .top-concept > *,
+.home-page .shop-feature,
+.home-page .owner-recruit-grid,
+.home-page .monthly-schedule-card {
+  position: static !important;
+  inset: auto !important;
+  z-index: auto !important;
+  min-height: 0 !important;
+  margin-top: 0 !important;
+  transform: none !important;
+  clip-path: none !important;
+}
+
+.home-page .hero {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  height: auto !important;
+  padding: clamp(96px, 9vw, 132px) 0 88px !important;
+  background: #fbf8f5 !important;
+}
+
+.home-page .hero-slides,
+.home-page .hero-content,
+.home-page .hero-slide-dots {
+  width: min(1180px, calc(100% - 64px)) !important;
+  max-width: 1180px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  transform: none !important;
+}
+
+.home-page .hero-slides {
+  order: 1;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px !important;
+  background: #eee8e3;
+}
+
+.home-page .hero-slide {
+  display: none !important;
+  position: static !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  transform: none !important;
+  clip-path: none !important;
+}
+
+.home-page .hero-slide.is-active { display: block !important; }
+
+.home-page .hero-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 12px !important;
+  object-fit: cover;
+  transform: none !important;
+  clip-path: none !important;
+}
+
+.home-page .hero-content {
+  order: 2;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 24px 0 !important;
+  text-align: center !important;
+  background: transparent !important;
+}
+
+.home-page .hero-content h1,
+.home-page .hero-content h1 span {
+  display: block !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-wrap: balance;
+}
+
+.home-page .hero-lead {
+  width: auto !important;
+  max-width: 42rem;
+  margin: 24px auto 0 !important;
+}
+
+.home-page .hero-actions {
+  display: flex !important;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin: 32px auto 0 !important;
+}
+
+.home-page .hero-slide-dots {
+  order: 3;
+  display: flex !important;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 24px;
+}
+
+.home-page .hero-slide-dots button {
+  display: block !important;
+  width: 8px !important;
+  min-width: 8px !important;
+  height: 8px !important;
+  min-height: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #d8ccc4 !important;
+  box-shadow: none !important;
+}
+
+.home-page .hero-slide-dots button.is-active { background: #935d62 !important; }
+
+.home-page .scroll-cue,
+.home-page .hero::before,
+.home-page .hero::after,
+.home-page .hero-content::before,
+.home-page .hero-content::after { display: none !important; }
+
+.home-page .business-strip,
+.home-page .reservation-ribbon {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 32px max(24px, calc((100% - 1180px) / 2)) !important;
+}
+
+.home-page .business-strip dl,
+.home-page .reservation-ribbon > * {
+  position: static !important;
+  margin-top: 0 !important;
+  transform: none !important;
+}
+
+.home-page .reservation-ribbon {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 32px;
+}
+
+.home-page main > section {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 88px max(32px, calc((100% - 1180px) / 2)) !important;
+}
+
+.home-page main > section:nth-of-type(even) { background-color: #fff !important; }
+.home-page main > section:nth-of-type(odd) { background-color: #fbf8f5 !important; }
+
+.home-page main img:not(.menu-logo) {
+  max-width: 100%;
+  border-radius: 12px !important;
+  transform: none !important;
+  clip-path: none !important;
+}
+
+.home-page .top-concept {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 56px;
+}
+
+.home-page .top-concept > * { width: auto !important; margin: 0 !important; }
+
+.home-page .button,
+.home-page .wide-link,
+.home-page .hero-guide-links a,
+.home-page .reservation-ribbon > a,
+.home-page .map-button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 16px 32px !important;
+  border-radius: 999px !important;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.home-page .hero-guide-primary,
+.home-page .reservation-ribbon > a {
+  color: #fff !important;
+  background: #935d62 !important;
+  box-shadow: 0 4px 14px rgba(147, 93, 98, 0.28) !important;
+}
+
+.home-page .hero-guide-secondary,
+.home-page .wide-link,
+.home-page .map-button {
+  color: #935d62 !important;
+  border: 1.5px solid #935d62 !important;
+  background: #fff !important;
+}
+
+.home-page .hero-guide-links a::after,
+.home-page .reservation-ribbon > a::after { content: "\2192"; margin-left: 12px; }
+
+@media (max-width: 767px) {
+  .home-page .hero { padding: 84px 0 56px !important; }
+
+  .home-page .hero-slides,
+  .home-page .hero-content,
+  .home-page .hero-slide-dots { width: calc(100% - 32px) !important; }
+
+  .home-page .hero-slides { aspect-ratio: 4 / 3; }
+  .home-page .hero-content { padding: 32px 0 0 !important; }
+
+  .home-page .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .home-page .hero-actions a,
+  .home-page .button,
+  .home-page .wide-link,
+  .home-page .reservation-ribbon > a,
+  .home-page .map-button {
+    width: min(100%, 340px) !important;
+    margin-inline: auto !important;
+  }
+
+  .home-page .business-strip,
+  .home-page .reservation-ribbon,
+  .home-page main > section { padding: 56px 20px !important; }
+
+  .home-page .reservation-ribbon,
+  .home-page .top-concept {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
