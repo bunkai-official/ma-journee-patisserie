@@ -1,7 +1,11 @@
 /* Stable top-page composition. Loaded after the legacy stylesheet. */
 html:has(.home-page),
 .home-page,
-.home-page main { width: 100%; max-width: 100%; overflow-x: clip; }
+.home-page main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 .home-page main > .hero,
 .home-page main > .business-strip,
