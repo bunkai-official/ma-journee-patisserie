@@ -78,11 +78,11 @@ html:has(.home-page),
 }
 
 .home-page .hero-content {
-  order: 2;
+  order: 3;
   display: flex !important;
   flex-direction: column;
   align-items: center;
-  padding: 48px 24px 0 !important;
+  padding: 36px 24px 0 !important;
   text-align: center !important;
   background: transparent !important;
 }
@@ -113,11 +113,11 @@ html:has(.home-page),
 }
 
 .home-page .hero-slide-dots {
-  order: 3;
+  order: 2;
   display: flex !important;
   justify-content: center;
   gap: 10px;
-  padding-top: 24px;
+  padding-top: 14px;
 }
 
 .home-page .hero-slide-dots button {
@@ -208,20 +208,50 @@ html:has(.home-page),
 .home-page .hero-guide-primary,
 .home-page .reservation-ribbon > a {
   color: #fff !important;
+  border: 1.5px solid #b2594d !important;
   background: #b2594d !important;
-  box-shadow: 0 4px 14px rgba(147, 93, 98, 0.28) !important;
+  box-shadow: 0 4px 14px rgba(201, 111, 96, 0.28) !important;
+}
+
+.home-page .hero-guide-links .hero-guide-primary {
+  color: #fff !important;
+  border-color: #b2594d !important;
+  background: #b2594d !important;
+  box-shadow: 0 4px 14px rgba(201, 111, 96, 0.28) !important;
 }
 
 .home-page .hero-guide-secondary,
 .home-page .wide-link,
 .home-page .map-button {
   color: #b2594d !important;
-  border: 1.5px solid #b2594d !important;
+  border: 1.5px solid #e08a7b !important;
   background: #fff !important;
+  box-shadow: none !important;
+}
+
+.home-page .hero-guide-links .hero-guide-secondary {
+  color: #b2594d !important;
+  border-color: #e08a7b !important;
+  background: #fff !important;
+  box-shadow: none !important;
 }
 
 .home-page .hero-guide-links a::after,
-.home-page .reservation-ribbon > a::after { content: "\2192"; margin-left: 12px; }
+.home-page .reservation-ribbon > a::after {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin-left: 12px;
+  content: "\2192";
+  transform: none !important;
+}
+
+.home-page .hero-guide-links a::before {
+  display: none !important;
+  content: none !important;
+}
+
+.home-page .hero-guide-links a::after { margin-left: auto; }
 
 @media (max-width: 767px) {
   .home-page .hero { padding: 84px 0 56px !important; }
@@ -231,7 +261,7 @@ html:has(.home-page),
   .home-page .hero-slide-dots { width: calc(100% - 32px) !important; }
 
   .home-page .hero-slides { aspect-ratio: 4 / 3; }
-  .home-page .hero-content { padding: 32px 0 0 !important; }
+  .home-page .hero-content { padding: 36px 0 0 !important; }
 
   .home-page .hero-actions {
     flex-direction: column;
@@ -392,6 +422,45 @@ html:has(.home-page),
   box-shadow: 0 2px 12px rgba(74, 51, 40, 0.06) !important;
   transition: box-shadow 220ms ease, transform 220ms ease;
 }
+
+.home-page .product-category-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+}
+
+.home-page .product-category {
+  grid-template-rows: auto 1fr auto;
+  min-height: 100%;
+  border-radius: 16px !important;
+}
+
+.home-page .product-category img {
+  aspect-ratio: 3 / 2;
+  border-radius: 16px 16px 0 0 !important;
+}
+
+.home-page .product-category span {
+  padding: 18px 18px 6px;
+}
+
+.home-page .product-category small {
+  min-height: 44px;
+  padding: 4px 18px 16px;
+  color: var(--coral-text) !important;
+  font-weight: 600;
+}
+
+.home-page .product-category small::after {
+  display: inline !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin-left: auto;
+  border: 0 !important;
+  content: "\2192";
+  transform: none !important;
+}
 .home-page .home-product-card:hover,
 .home-page .product-category:hover,
 .home-page .link-card:hover {
@@ -449,11 +518,15 @@ html:has(.home-page),
 
 @media (max-width: 1023px) {
   .home-page .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .home-page .product-category-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 767px) {
   .home-page main > section::before { height: 24px; margin-bottom: 28px; }
   .home-page .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-page .product-category-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-page .product-category span { padding: 14px 12px 4px; }
+  .home-page .product-category small { padding: 4px 12px 14px; }
   .home-page .shop-feature { grid-template-columns: 1fr; gap: 28px; }
   .home-page .shop-exterior-extra img { aspect-ratio: 4 / 3; }
 }

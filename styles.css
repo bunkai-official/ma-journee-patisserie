@@ -500,7 +500,8 @@ h3 {
 }
 
 .text-link::after {
-  content: "  >";
+  display: none;
+  content: none;
 }
 
 .split-section,
