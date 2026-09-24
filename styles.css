@@ -1677,16 +1677,6 @@ h3 {
   box-shadow: none;
 }
 
-.home-page .home-product-card:nth-child(2),
-.home-page .home-product-card:nth-child(5) {
-  transform: translateY(54px);
-}
-
-.home-page .home-product-card.js-fade-up:nth-child(2).is-visible,
-.home-page .home-product-card.js-fade-up:nth-child(5).is-visible {
-  transform: translateY(54px);
-}
-
 .home-page .home-product-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -2113,13 +2103,6 @@ h3 {
 
   .home-page .home-product-card {
     grid-column: span 1;
-  }
-
-  .home-page .home-product-card:nth-child(2),
-  .home-page .home-product-card:nth-child(5),
-  .home-page .home-product-card.js-fade-up:nth-child(2).is-visible,
-  .home-page .home-product-card.js-fade-up:nth-child(5).is-visible {
-    transform: translateY(26px);
   }
 
   .home-page .home-product-card > div {
@@ -4947,9 +4930,7 @@ h3,
   gap: clamp(18px, 2.2vw, 28px);
 }
 
-.home-page .home-product-card,
-.home-page .home-product-card:nth-child(even),
-.home-page .home-product-card.js-fade-up:nth-child(even).is-visible {
+.home-page .home-product-card {
   display: block;
   grid-column: auto;
   height: auto;
@@ -6747,14 +6728,6 @@ h3,
   box-shadow: 0 16px 42px rgba(74, 51, 40, 0.07);
 }
 
-.home-page .home-product-card:nth-child(even) {
-  transform: translateY(28px);
-}
-
-.home-page .home-product-card.js-fade-up:nth-child(even).is-visible {
-  transform: translateY(28px);
-}
-
 .home-page .feature-row {
   margin-top: clamp(56px, 8vw, 112px);
 }
@@ -6926,10 +6899,6 @@ h3,
     padding-block: 68px;
   }
 
-  .home-page .home-product-card:nth-child(even),
-  .home-page .home-product-card.js-fade-up:nth-child(even).is-visible {
-    transform: none;
-  }
 }
 
 /* WEB reservation */
@@ -7659,12 +7628,6 @@ h3,
     grid-template-columns: 1fr;
   }
 
-  .home-page .home-product-card:nth-child(2),
-  .home-page .home-product-card:nth-child(5),
-  .home-page .home-product-card.js-fade-up:nth-child(2).is-visible,
-  .home-page .home-product-card.js-fade-up:nth-child(5).is-visible {
-    transform: none;
-  }
 }
 
 /* Shared footer: extend the home-page treatment to every public page. */
@@ -7841,9 +7804,7 @@ body:not(.home-page) h3 {
   align-items: start;
 }
 
-.home-page .home-product-card,
-.home-page .home-product-card:nth-child(even),
-.home-page .home-product-card.js-fade-up:nth-child(even).is-visible {
+.home-page .home-product-card {
   display: block;
   height: auto;
   min-height: 0;

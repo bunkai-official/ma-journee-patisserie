@@ -253,6 +253,30 @@ html:has(.home-page),
 
 .home-page .hero-guide-links a::after { margin-left: auto; }
 
+.home-page .home-visual .hero-actions.hero-guide-links {
+  gap: 16px !important;
+}
+
+.home-page .shop-feature .info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.home-page .shop-feature .info-card > .arrow-link,
+.home-page .shop-feature .info-card > .map-button {
+  width: 100% !important;
+  margin: 0 !important;
+  justify-content: space-between !important;
+  text-align: left !important;
+}
+
+.home-page .shop-feature .info-card > .map-button::after {
+  margin-left: 12px;
+  content: "\2192";
+}
+
 @media (max-width: 767px) {
   .home-page .hero { padding: 84px 0 56px !important; }
 
@@ -267,6 +291,10 @@ html:has(.home-page),
     flex-direction: column;
     align-items: center;
     gap: 12px;
+  }
+
+  .home-page .home-visual .hero-actions.hero-guide-links {
+    gap: 12px !important;
   }
 
   .home-page .hero-actions a,
